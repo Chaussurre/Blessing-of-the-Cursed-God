@@ -8,15 +8,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BaseTileMat
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: fee2b27e013ac194ba07a8309c6bd6ce,
+    type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -162,6 +162,7 @@ Material:
     - _NumLayersCount: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SampleGI: 0
@@ -183,7 +184,9 @@ Material:
     - _BaseColor: {r: 0.074065454, g: 0.6886792, b: 0.09684057, a: 1}
     - _Color: {r: 0.07406544, g: 0.6886792, b: 0.09684054, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Side_Color: {r: 0.054901935, g: 0.30980387, b: 0.09018154, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Up_Color: {r: 0.07394085, g: 0.5849056, b: 0.07394085, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &4837848913246795155
 MonoBehaviour:

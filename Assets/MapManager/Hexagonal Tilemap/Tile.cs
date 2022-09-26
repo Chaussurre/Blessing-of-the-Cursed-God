@@ -11,6 +11,7 @@ namespace map.HexTilemap
         public struct TileInfos
         {
             public Color color;
+            public float Height;
         }
 
         public TileInfos infos;
@@ -23,6 +24,7 @@ namespace map.HexTilemap
         public virtual void SetInfos(TileInfos newInfos)
         {
             meshRenderer.material.color = newInfos.color;
+            meshRenderer.transform.localPosition = Vector3.up * newInfos.Height;
             infos = newInfos;
         }
 

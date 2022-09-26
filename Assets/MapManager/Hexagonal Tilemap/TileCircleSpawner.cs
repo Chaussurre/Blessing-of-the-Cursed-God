@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace map.HexTilemap
 {
@@ -13,6 +14,14 @@ namespace map.HexTilemap
         public int radius;
         public Tile.TileInfos infos;
 
+        [SerializeField] private bool SpawnOnStart;
+
+        private void Start()
+        {
+            if(SpawnOnStart)
+                CreateCircle();
+        }
+
         public void CreateCircle()
         {
             for (int x = -radius; x <= radius; x++)
@@ -22,9 +31,17 @@ namespace map.HexTilemap
                 {
                     var radiusXY = radiusX - Mathf.Abs(y);
                     for (int z = -radiusXY; z <= radiusXY; z++)
-                        TilemapManager.SetTile(new Vector3Int(x, y, z), infos);
+                        CreateTile(new Vector3Int(x, y, z));
                 }
             }
+        }
+
+        void CreateTile(Vector3Int coordinates)
+        {
+            var tileInfos = infos;
+            tileInfos.Height = Random.Range(0f, 1f);
+            
+            TilemapManager.SetTile(coordinates, tileInfos);
         }
     }
 
