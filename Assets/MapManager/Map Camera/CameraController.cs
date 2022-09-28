@@ -12,15 +12,41 @@ namespace Map.Camera
         public float sensitivity;
         public float AngleMax;
         public float AngleMin;
+        
+        public bool inverseVerticalCamera;
+
+        private int zoomSteps;
+        private int MaxZoomSteps;
+
+        private RenderTexture mapCameraRenderTexture;
+        
+        private float angleX;
+        private float angleY;
 
         private void Update()
         {
             var mouse = Mouse.current;
-            if (mouse == null || !mouse.middleButton.isPressed)
+            if (mouse == null)
                 return;
-            var direction = mouse.delta.ReadValue();
             
-            transform.Rotate(Vector3.up, direction.x * sensitivity);
+            if (mouse.middleButton.isPressed)
+                RotateCameras(mouse.delta.ReadValue());
+        }
+
+        void RotateCameras(Vector2 mouseDelta)
+        {
+
+            angleX += mouseDelta.x * sensitivity;
+            angleX %= 360;
+
+            if (inverseVerticalCamera)
+                angleY += mouseDelta.y * sensitivity;
+            else
+                angleY -= mouseDelta.y * sensitivity;
+            
+            angleY = Mathf.Clamp(angleY, AngleMin, AngleMax);
+
+            transform.eulerAngles = new Vector3(angleY, angleX);
         }
     }
 }

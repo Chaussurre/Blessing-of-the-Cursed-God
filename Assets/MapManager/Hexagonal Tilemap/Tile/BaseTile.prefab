@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 331929257832018492}
   - component: {fileID: 6470156688268564088}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BaseTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,8 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infos:
     color: {r: 0, g: 0, b: 0, a: 0}
-    Position: {x: 0, y: 0, z: 0}
-    Position2: {x: 0, y: 0}
+    Height: 0
   meshRenderer: {fileID: 4685101309092922581}
 --- !u!1 &3949198144759351950
 GameObject:
@@ -61,7 +60,7 @@ GameObject:
   - component: {fileID: 3235477525210858838}
   - component: {fileID: 6273080076499622253}
   - component: {fileID: 4685101309092922581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tile Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
