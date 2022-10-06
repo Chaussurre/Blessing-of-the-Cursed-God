@@ -15,6 +15,11 @@ namespace Map.Camera
         {
             public float Start;
             public float End;
+
+            public float Length()
+            {
+                return Mathf.Abs(End - Start);
+            }
         }
         
         public ZoomRange RoomCameraZoomRange;
@@ -24,10 +29,21 @@ namespace Map.Camera
         public UnityEngine.Camera MapCamera;
         public SetUpRenderTexture Texture;
         
-        public float ZoomSensitivity;
+        public float ZoomStep;
+        public float ZoomSmoothSpeed;
 
+        private float zoomSensitivityRoom;
+        private float zoomSensitivityMap;
+            
         private float zoom;
-        
+        private float zoomTarget;
+
+        private void Start()
+        {
+            zoomSensitivityMap = ZoomStep / MapCameraZoomRange.Length();
+            zoomSensitivityRoom = ZoomStep / RoomCameraZoomRange.Length();
+        }
+
         private void Update()
         {
             var mouse = Mouse.current;
@@ -39,7 +55,10 @@ namespace Map.Camera
 
         private void Zoom(float zoomDelta)
         {
-            zoom = Mathf.Clamp(zoom + zoomDelta * ZoomSensitivity, 0, 2);
+            float zoomSensitivity = zoom < 1 ? zoomSensitivityRoom : zoomSensitivityMap;
+            
+            zoomTarget = Mathf.Clamp(zoomTarget + zoomDelta * zoomSensitivity, 0, 2);
+            zoom = Mathf.Lerp(zoom, zoomTarget, ZoomSmoothSpeed * Time.deltaTime);
             
             var zoomRoom = Mathf.Clamp01(zoom);
             var zoomMap = Mathf.Clamp01(zoom - 1);
@@ -61,6 +80,9 @@ namespace Map.Camera
             {
                 RoomCamera.enabled = true;
                 MapCamera.targetTexture = Texture.Texture;
+                
+                var color = MapCamera.backgroundColor; 
+                MapCamera.backgroundColor = new Color(color.r, color.g, color.b, zoom);
             }
         }
     }
