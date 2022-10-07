@@ -12,6 +12,7 @@ namespace map.HexTilemap
         public TilemapManager TilemapManager;
 
         public int radius;
+        public float Height;
         public Tile.TileInfos infos;
 
         [SerializeField] private bool SpawnOnStart;
@@ -39,7 +40,7 @@ namespace map.HexTilemap
         void CreateTile(Vector3Int coordinates)
         {
             var tileInfos = infos;
-            tileInfos.Height = Random.Range(0f, 1f);
+            tileInfos.Height = Random.Range(0f, Height);
             
             TilemapManager.SetTile(coordinates, tileInfos);
         }

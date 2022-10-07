@@ -21,7 +21,8 @@ namespace Map.Camera
                 return Mathf.Abs(End - Start);
             }
         }
-        
+        public bool MapCameraActive => zoom >= 1;
+
         public ZoomRange RoomCameraZoomRange;
         public ZoomRange MapCameraZoomRange;
 

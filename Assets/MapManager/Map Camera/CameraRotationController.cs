@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 namespace Map.Camera
 {
-    public class CameraController : MonoBehaviour
+    public class CameraRotationController : MonoBehaviour
     {
         public float sensitivity;
         public float AngleMax;
@@ -22,6 +22,11 @@ namespace Map.Camera
         
         private float angleX;
         private float angleY;
+
+        private void Start()
+        {
+            RotateCameras(Vector2.zero);
+        }
 
         private void Update()
         {
