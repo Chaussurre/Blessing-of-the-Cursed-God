@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &155766833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155766834}
+  m_Layer: 6
+  m_Name: Tiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &155766834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155766833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 911464525}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TilemapManager: {fileID: 911464524}
   radius: 15
+  Height: 0.8
   infos:
     color: {r: 0.20682508, g: 0.5647059, b: 0.1882353, a: 1}
     Height: 0
@@ -516,6 +548,7 @@ MonoBehaviour:
   radius: 1
   depth: 1
   Prefab: {fileID: 6470156688268564088, guid: cc32eec53ea755446a6a9293b8422668, type: 3}
+  TileParent: {fileID: 155766834}
 --- !u!4 &911464525
 Transform:
   m_ObjectHideFlags: 0
@@ -524,11 +557,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911464522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2072568103}
+  - {fileID: 155766834}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -580,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e30ae7533324b46b1c372813bf7f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 1
+  sensitivity: 0.1
   AngleMax: 70
   AngleMin: 15
   inverseVerticalCamera: 0
@@ -997,4 +1031,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Zoom: {fileID: 1302312711}
   RadiusMax: 20
+  ChangeMax: 0.3
   MapCamera: {fileID: 1921120730}
+  Map: {fileID: 155766834}

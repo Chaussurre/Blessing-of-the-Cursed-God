@@ -10,6 +10,7 @@ namespace map.HexTilemap
         public float depth;
 
         [SerializeField] private Tile Prefab;
+        [SerializeField] private Transform TileParent;
         protected  Dictionary<Vector2, Tile> Tiles = new();
 
         public Tile GetTile(Vector2Int coordinates)
@@ -43,7 +44,7 @@ namespace map.HexTilemap
             }
             else
             {
-                var tile = Instantiate(Prefab, transform);
+                var tile = Instantiate(Prefab, TileParent);
                 tile.transform.localScale = new Vector3(radius, depth, radius);
                 tile.transform.localPosition = CoordinatesToLocalPosition(coordinates);
                 tile.SetInfos(infos);
