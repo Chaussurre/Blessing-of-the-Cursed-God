@@ -36,7 +36,7 @@ namespace map.HexTilemap
             return new Vector2Int(coordinates.x + coordinates.z, coordinates.y - coordinates.z);
         }
 
-        public void SetTile(Vector2Int coordinates, Tile.TileInfos infos)
+        public void SetTile(Vector2Int coordinates, TileType.TileInfos infos)
         {
             if (Tiles.ContainsKey(coordinates))
             {
@@ -52,7 +52,7 @@ namespace map.HexTilemap
             }
         }
 
-        public void SetTile(Vector3Int coordinates, Tile.TileInfos infos)
+        public void SetTile(Vector3Int coordinates, TileType.TileInfos infos)
         {
             SetTile(ConvertCoordinates(coordinates), infos);
         }

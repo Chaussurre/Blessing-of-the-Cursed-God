@@ -12,10 +12,10 @@ namespace map.HexTilemap
         public TilemapManager TilemapManager;
 
         public int radius;
-        public float Height;
-        public Tile.TileInfos infos;
 
         [SerializeField] private bool SpawnOnStart;
+
+        [HideInInspector] public readonly List<Vector3Int> Coordinates = new();
 
         private void Start()
         {
@@ -32,17 +32,9 @@ namespace map.HexTilemap
                 {
                     var radiusXY = radiusX - Mathf.Abs(y);
                     for (int z = -radiusXY; z <= radiusXY; z++)
-                        CreateTile(new Vector3Int(x, y, z));
+                        Coordinates.Add(new Vector3Int(x, y, z));
                 }
             }
-        }
-
-        void CreateTile(Vector3Int coordinates)
-        {
-            var tileInfos = infos;
-            tileInfos.Height = Random.Range(0f, Height);
-            
-            TilemapManager.SetTile(coordinates, tileInfos);
         }
     }
 

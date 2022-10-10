@@ -507,6 +507,7 @@ GameObject:
   - component: {fileID: 911464525}
   - component: {fileID: 911464524}
   - component: {fileID: 911464523}
+  - component: {fileID: 911464526}
   m_Layer: 6
   m_Name: Overworld Manager
   m_TagString: Untagged
@@ -528,10 +529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TilemapManager: {fileID: 911464524}
   radius: 15
-  Height: 0.8
-  infos:
-    color: {r: 0.20682508, g: 0.5647059, b: 0.1882353, a: 1}
-    Height: 0
+  TileTypeManager: {fileID: 911464526}
   SpawnOnStart: 1
 --- !u!114 &911464524
 MonoBehaviour:
@@ -566,6 +564,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &911464526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911464522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c55ece919ee38b42903c177831562d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Types:
+  - color: {r: 0.20784315, g: 0.5647059, b: 0.18823531, a: 1}
+    Height: 0.8
+  - color: {r: 0.07864004, g: 0.44616973, b: 0.8867924, a: 1}
+    Height: 0
+  - color: {r: 0.9811321, g: 0.9306364, b: 0.54980415, a: 1}
+    Height: 0.3
 --- !u!1 &1302312706
 GameObject:
   m_ObjectHideFlags: 0
