@@ -1,6 +1,6 @@
 {
     "name": "MapGenerationNoiseMap",
-    "rootNamespace": "Map.Generation.NoiseMap",
+    "rootNamespace": "Map.Generation.NoiseMaps",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 410087040}
   m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -97,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f188c2969b4e9a84b926de98c6f3b7b9,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 7d14cc8993226a5449ea73cfb788b1bf,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -507,7 +509,8 @@ GameObject:
   - component: {fileID: 911464525}
   - component: {fileID: 911464524}
   - component: {fileID: 911464523}
-  - component: {fileID: 911464526}
+  - component: {fileID: 911464529}
+  - component: {fileID: 911464528}
   m_Layer: 6
   m_Name: Overworld Manager
   m_TagString: Untagged
@@ -528,8 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TilemapManager: {fileID: 911464524}
-  radius: 15
-  TileTypeManager: {fileID: 911464526}
+  radius: 10
   SpawnOnStart: 1
 --- !u!114 &911464524
 MonoBehaviour:
@@ -544,7 +546,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 1
-  depth: 1
+  BoundSize: {x: 0, y: 0}
+  BottomLeftCornerBound: {x: 0, y: 0}
+  TopRightCornerBound: {x: 0, y: 0}
   Prefab: {fileID: 6470156688268564088, guid: cc32eec53ea755446a6a9293b8422668, type: 3}
   TileParent: {fileID: 155766834}
 --- !u!4 &911464525
@@ -564,7 +568,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &911464526
+--- !u!114 &911464528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -573,16 +577,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 911464522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c55ece919ee38b42903c177831562d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 0521791da5043d44f88c5eaba621721d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TileCoordinates: {fileID: 911464523}
+  MapManager: {fileID: 911464524}
+  TileTypeManager: {fileID: 911464529}
+  MaxHeight: 1
+  SetSeed: 1
+  Seed: 0
+--- !u!114 &911464529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911464522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33bcebd2cbef09c4f86add32a4eb3f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Types:
-  - color: {r: 0.20784315, g: 0.5647059, b: 0.18823531, a: 1}
-    Height: 0.8
-  - color: {r: 0.07864004, g: 0.44616973, b: 0.8867924, a: 1}
-    Height: 0
-  - color: {r: 0.9811321, g: 0.9306364, b: 0.54980415, a: 1}
-    Height: 0.3
+  - {fileID: 11400000, guid: ce611225c2bf610409ac5f98743a3933, type: 2}
+  - {fileID: 11400000, guid: 1b9903ac9b6e1444c98c6ebd0b4db1bd, type: 2}
+  - {fileID: 11400000, guid: d868b2b034f402d488bccc577cec2731, type: 2}
+  - {fileID: 11400000, guid: 5195d3abe756ebc419d0f3c97a389ce7, type: 2}
+  reduceHeight: 0
 --- !u!1 &1302312706
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +723,7 @@ MonoBehaviour:
     Start: 15
     End: 0
   MapCameraZoomRange:
-    Start: 50
+    Start: 80
     End: 5
   RoomCamera: {fileID: 330585545}
   MapCamera: {fileID: 1921120730}

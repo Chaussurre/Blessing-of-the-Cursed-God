@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d1ce646864eb64f931191057c0ce04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infos:
-    color: {r: 0, g: 0, b: 0, a: 0}
-    Height: 0
+  Type: {fileID: 0}
+  Height: 0
   meshRenderer: {fileID: 4685101309092922581}
+  minimumHeight: 0.2
 --- !u!1 &3949198144759351950
 GameObject:
   m_ObjectHideFlags: 0

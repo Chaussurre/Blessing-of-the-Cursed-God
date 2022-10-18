@@ -15,9 +15,13 @@ namespace map.HexTilemap
 
         [SerializeField] private bool SpawnOnStart;
 
-        [HideInInspector] public readonly List<Vector3Int> Coordinates = new();
+        public readonly List<Vector3Int> Coordinates = new();
 
-        private void Start()
+        public TileType type1;
+        public TileType type2;
+        public TileType type3;
+
+        private void Awake()
         {
             if(SpawnOnStart)
                 CreateCircle();
@@ -25,16 +29,30 @@ namespace map.HexTilemap
 
         public void CreateCircle()
         {
-            for (int x = -radius; x <= radius; x++)
+            Coordinates.Clear();
+            
+            for (int x = 1; x <= radius; x++)
             {
-                var radiusX = radius - Mathf.Abs(x);
-                for (int y = -radiusX; y <= radiusX; y++)
+                var radiusX = radius - x;
+                for (int y = 1; y <= radiusX; y++)
                 {
-                    var radiusXY = radiusX - Mathf.Abs(y);
-                    for (int z = -radiusXY; z <= radiusXY; z++)
-                        Coordinates.Add(new Vector3Int(x, y, z));
+                    new Vector3Int(x, y, 0);
+                    new Vector3Int(-x, -y, 0);
+                    new Vector3Int(x, 0, y);
+                    new Vector3Int(-x, 0, -y);
+                    new Vector3Int(0, x, -y);
+                    new Vector3Int(0, -x, y);
                 }
+
+                new Vector3Int(x, 0, 0);
+                new Vector3Int(-x, 0, 0);
+                new Vector3Int(0, x, 0);
+                new Vector3Int(0, -x, 0);
+                new Vector3Int(0, 0, x);
+                new Vector3Int(0, 0, -x);
             }
+
+            new Vector3Int(0, 0, 0);
         }
     }
 
