@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,6 +23,7 @@ namespace MathExtra.NoiseMaps.Tests
         private void Start()
         {
             texture = new Texture2D(TextureSize.x, TextureSize.y);
+            texture.filterMode = FilterMode.Point;
             renderer.material.mainTexture = texture;
             UpdateTexture();
         }
@@ -44,3 +47,4 @@ namespace MathExtra.NoiseMaps.Tests
         }
     }
 }
+#endif

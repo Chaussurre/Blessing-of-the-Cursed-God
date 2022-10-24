@@ -3,7 +3,7 @@
     "rootNamespace": "Map.Generation",
     "references": [
         "HexagonalTilemap",
-        "MapGenerationNoiseMap"
+        "NoiseMaps"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

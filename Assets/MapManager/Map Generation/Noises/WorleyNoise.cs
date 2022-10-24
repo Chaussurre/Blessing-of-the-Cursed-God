@@ -11,6 +11,7 @@ namespace MathExtra.NoiseMaps
         public float scaleInput;
         public float MaxDistance;
         public float radialOffset;
+        public bool invert;
 
         public Vector2 GetPointPos(Vector2Int coordinates)
         {
@@ -53,6 +54,9 @@ namespace MathExtra.NoiseMaps
             float value = GetShortestDistance(pos);
             value = Mathf.Clamp01(value / MaxDistance);
 
+            if (invert)
+                return 1 - value;
+            
             return value;
         }
     }

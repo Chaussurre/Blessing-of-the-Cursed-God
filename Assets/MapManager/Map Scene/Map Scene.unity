@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 911464524}
   - component: {fileID: 911464523}
   - component: {fileID: 911464529}
-  - component: {fileID: 911464528}
+  - component: {fileID: 911464530}
   m_Layer: 6
   m_Name: Overworld Manager
   m_TagString: Untagged
@@ -532,10 +532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TilemapManager: {fileID: 911464524}
   radius: 20
-  SpawnOnStart: 1
-  type1: {fileID: 11400000, guid: 1b9903ac9b6e1444c98c6ebd0b4db1bd, type: 2}
-  type2: {fileID: 11400000, guid: ce611225c2bf610409ac5f98743a3933, type: 2}
-  type3: {fileID: 11400000, guid: 5195d3abe756ebc419d0f3c97a389ce7, type: 2}
+  SpawnOnStart: 0
 --- !u!114 &911464524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,24 +568,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &911464528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911464522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0521791da5043d44f88c5eaba621721d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TileCoordinates: {fileID: 911464523}
-  MapManager: {fileID: 911464524}
-  TileTypeManager: {fileID: 911464529}
-  MaxHeight: 1
-  SetSeed: 1
-  Seed: 0
 --- !u!114 &911464529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,7 +585,33 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1b9903ac9b6e1444c98c6ebd0b4db1bd, type: 2}
   - {fileID: 11400000, guid: d868b2b034f402d488bccc577cec2731, type: 2}
   - {fileID: 11400000, guid: 5195d3abe756ebc419d0f3c97a389ce7, type: 2}
-  reduceHeight: 0
+--- !u!114 &911464530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911464522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9620cb31f8558547a6ee873a4070174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perlin:
+    seed: 0
+    scaleInput: 13
+    radialOffset: 0
+  worley:
+    seed: 0
+    scaleInput: 4
+    MaxDistance: 1
+    radialOffset: 0
+  TilesCoordinates: {fileID: 911464523}
+  MapManager: {fileID: 911464524}
+  TileType: {fileID: 911464529}
+  MaxHeight: 8
+  ShiftHeight: 0.05
+  flatten: 0
 --- !u!1 &1302312706
 GameObject:
   m_ObjectHideFlags: 0

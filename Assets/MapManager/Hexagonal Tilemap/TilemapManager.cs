@@ -50,7 +50,7 @@ namespace map.HexTilemap
         {
             if (Tiles.ContainsKey(coordinates))
             {
-                Tiles[coordinates].SetInfos(Type, 3);
+                Tiles[coordinates].SetInfos(Type, Height);
             }
             else
             {

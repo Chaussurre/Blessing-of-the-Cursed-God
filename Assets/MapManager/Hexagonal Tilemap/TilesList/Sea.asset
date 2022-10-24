@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7541ccb7707c6d44ab49d8c50345bf1a, type: 3}
   m_Name: Sea
   m_EditorClassIdentifier: 
-  preferredHeight: 0.4
-  forceHeight: 0
+  preferredHeight: 0
+  forceHeight: 1
   color: {r: 0.08276964, g: 0.3842615, b: 0.7075472, a: 1}
