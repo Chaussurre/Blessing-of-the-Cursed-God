@@ -48,7 +48,7 @@ MonoBehaviour:
   Type: {fileID: 0}
   Height: 0
   meshRenderer: {fileID: 4685101309092922581}
-  minimumHeight: 1
+  minimumHeight: 0.2
 --- !u!1 &3949198144759351950
 GameObject:
   m_ObjectHideFlags: 0

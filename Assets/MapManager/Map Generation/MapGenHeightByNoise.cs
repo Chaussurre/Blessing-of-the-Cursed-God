@@ -21,6 +21,8 @@ namespace Map.Generation
 
         [Range(0, 1)] public float ShiftHeight;
         [Range(0, 1)] public float flatten;
+
+        public List<PostGenerationEffect> PostGenerationEffects;
         
         void Start()
         {
@@ -43,6 +45,11 @@ namespace Map.Generation
                 var type = TileType.GetTileInfos(ref height);
                 
                 MapManager.SetTile(coordinates, type, height * MaxHeight);
+            }
+
+            foreach (var effect in PostGenerationEffects)
+            {
+                effect.ApplyEffect(MapManager, TileType, TilesCoordinates.Coordinates);
             }
         }
     }
