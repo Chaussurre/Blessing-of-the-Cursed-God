@@ -8,15 +8,12 @@ namespace Map.Generation
     public class TileTypeByHeight : MonoBehaviour
     {
         public List<TileType> Types;
-        public float reduceHeight; //used to have larger seas
         
         public TileType GetTileInfos(ref float height)
         {
             float distance = float.PositiveInfinity;
             TileType result = null;
 
-            height -= reduceHeight;
-            
             foreach (var type in Types)
             {
                 var newDistance = Mathf.Abs(type.preferredHeight - height);

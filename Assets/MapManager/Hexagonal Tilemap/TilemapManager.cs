@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -97,6 +98,11 @@ namespace map.HexTilemap
         public void SetTile(Vector3Int coordinates, TileType Type, float Height)
         {
             SetTile(ConvertCoordinates(coordinates), Type, Height);
+        }
+
+        public List<Vector2Int> GetNeighbors(Vector2Int coordinates)
+        {
+            throw new NotImplementedException();
         }
     }
 }

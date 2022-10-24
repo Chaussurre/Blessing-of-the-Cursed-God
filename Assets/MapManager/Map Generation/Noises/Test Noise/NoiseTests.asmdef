@@ -1,7 +1,9 @@
 {
-    "name": "MapGenerationNoiseMap",
-    "rootNamespace": "Map.Generation.NoiseMaps",
-    "references": [],
+    "name": "NoiseTests",
+    "rootNamespace": "MathExtra.NoiseMaps.Tests",
+    "references": [
+        "GUID:66c6cb2a90651864bb501f42818003ea"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -35,27 +35,17 @@ namespace Map.Generation
         
         public void GenerateMap()
         {
-            InitRandom();
+            TileCoordinates.CreateCircle();
             
-            var coordinates = TileCoordinates.Coordinates;
+            InitRandom();
 
-            foreach (var c in coordinates)
+            foreach (var coordinates in TileCoordinates.Coordinates)
             {
-                //var height = Random.Range(0f, 1f);
+                var height = Random.Range(0f, 1f);
 
-                //var tile = MapManager.GetTile(c);
-                //if (tile)
-                //    continue;
-
-                var height =  
-                    c.z == 0 ? 0.9f :
-                    c.y == 0 ? 0.5f : 
-                    c.x == 0 ? 0.2f :
-                    0;
-                
                 var tileType = TileTypeManager.GetTileInfos(ref height);
                 
-                MapManager.SetTile(c, tileType, height * MaxHeight);
+                MapManager.SetTile(coordinates, tileType, height * MaxHeight);
             }
         }
     }

@@ -531,8 +531,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TilemapManager: {fileID: 911464524}
-  radius: 10
+  radius: 20
   SpawnOnStart: 1
+  type1: {fileID: 11400000, guid: 1b9903ac9b6e1444c98c6ebd0b4db1bd, type: 2}
+  type2: {fileID: 11400000, guid: ce611225c2bf610409ac5f98743a3933, type: 2}
+  type3: {fileID: 11400000, guid: 5195d3abe756ebc419d0f3c97a389ce7, type: 2}
 --- !u!114 &911464524
 MonoBehaviour:
   m_ObjectHideFlags: 0
