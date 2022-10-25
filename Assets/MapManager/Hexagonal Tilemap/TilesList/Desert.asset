@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7541ccb7707c6d44ab49d8c50345bf1a, type: 3}
-  m_Name: Sea
+  m_Name: Desert
   m_EditorClassIdentifier: 
-  preferredHeight: 0
-  forceHeight: 1
-  color: {r: 0.08276964, g: 0.3842615, b: 0.7075472, a: 1}
-  Material: {fileID: 2100000, guid: 502800a701709d445b03e881b4194d38, type: 2}
+  preferredHeight: 0.2
+  forceHeight: 0
+  color: {r: 0.8773585, g: 0.71765226, b: 0.26817372, a: 1}

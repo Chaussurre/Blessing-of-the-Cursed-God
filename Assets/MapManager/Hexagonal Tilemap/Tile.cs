@@ -19,6 +19,9 @@ namespace map.HexTilemap
 
         public virtual void SetInfos(TileType Type, float Height)
         {
+            if (Type.Material)
+                meshRenderer.material = Type.Material;
+            
             meshRenderer.material.color = Type.color;
             meshRenderer.transform.localPosition = Vector3.up * 0.5f;
             transform.localScale = new Vector3(1, Height + minimumHeight, 1);

@@ -13,5 +13,7 @@ namespace map.HexTilemap
         public bool forceHeight;
         
         public Color color;
+
+        public Material Material;
     }
 }
