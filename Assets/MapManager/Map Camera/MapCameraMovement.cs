@@ -42,10 +42,12 @@ namespace Map.Camera
                     return;
 
                 //we move the camera
-                Map.localPosition += endPos - startPos;
+                transform.position -= endPos - startPos;
 
-                if (Map.localPosition.magnitude > RadiusMax)
-                    Map.localPosition = Map.localPosition.normalized * RadiusMax;
+                var horizontalPos = Vector3.ProjectOnPlane(transform.position, Vector3.up);
+                var verticalPos = transform.position.y;
+                if (horizontalPos.magnitude > RadiusMax)
+                    transform.position = horizontalPos.normalized * RadiusMax + verticalPos * Vector3.up;
             }
         }
     }
