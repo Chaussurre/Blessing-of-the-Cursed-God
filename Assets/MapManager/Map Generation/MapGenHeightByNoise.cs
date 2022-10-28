@@ -17,10 +17,8 @@ namespace Map.Generation
         public TilemapManager MapManager;
         public TileTypeByHeight TileType;
 
-        public float MaxHeight;
-
-        [Range(0, 1)] public float ShiftHeight;
         [Range(0, 1)] public float flatten;
+
 
         public List<PostGenerationEffect> PostGenerationEffects;
         
@@ -41,15 +39,14 @@ namespace Map.Generation
                 pos += (Vector2)MapManager.BottomLeftCornerBound * MapManager.radius;
                 pos = new Vector2(pos.x / MapManager.BoundSize.x, pos.y / MapManager.BoundSize.y);
 
-                var height = (perlin.NoiseValue(pos) * worley.NoiseValue(pos) - ShiftHeight) * (1 - flatten);
-                var type = TileType.GetTileInfos(ref height);
+                var height = perlin.NoiseValue(pos) * worley.NoiseValue(pos) * (1 - flatten);
                 
-                MapManager.SetTile(coordinates, type, height * MaxHeight);
+                MapManager.SetTile(coordinates, TileType.GetTileInfos(height), height);
             }
 
             foreach (var effect in PostGenerationEffects)
             {
-                effect.ApplyEffect(MapManager, TileType, TilesCoordinates.Coordinates);
+                effect.ApplyEffect(MapManager, TilesCoordinates.Coordinates);
             }
         }
     }

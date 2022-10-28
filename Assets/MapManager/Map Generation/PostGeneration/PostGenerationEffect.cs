@@ -7,6 +7,6 @@ namespace Map.Generation
 {
     public abstract class PostGenerationEffect : MonoBehaviour
     {
-        abstract public void ApplyEffect(TilemapManager mapManager, TileTypeByHeight TileType, List<Vector3Int> coordinates);
+        abstract public void ApplyEffect(TilemapManager mapManager, List<Vector3Int> coordinates);
     }
 }

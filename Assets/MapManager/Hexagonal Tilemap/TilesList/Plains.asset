@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7541ccb7707c6d44ab49d8c50345bf1a, type: 3}
   m_Name: Plains
   m_EditorClassIdentifier: 
-  preferredHeight: 0.2
-  forceHeight: 0
+  preferredHeight: 0.4
   color: {r: 0.20793012, g: 0.6886792, b: 0.15202916, a: 1}

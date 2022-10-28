@@ -185,6 +185,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 507801460}
+  - {fileID: 1674351636}
   m_Father: {fileID: 911464525}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -457,7 +458,7 @@ GameObject:
   - component: {fileID: 507801460}
   - component: {fileID: 507801461}
   m_Layer: 6
-  m_Name: Elevate Seas Effect
+  m_Name: Create Seas Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -490,8 +491,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829c5e19863f85841966f2166e41fb59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  differenceLandSea: 0.2
-  Sea: {fileID: 11400000, guid: ce611225c2bf610409ac5f98743a3933, type: 2}
+  differenceLandSea: 0.1
+  SeaTile: {fileID: 11400000, guid: ce611225c2bf610409ac5f98743a3933, type: 2}
+  OceanFloorTile: {fileID: 11400000, guid: 4b95945b393640842a7410fe9994a771, type: 2}
+  OceanMat: {fileID: 2100000, guid: 502800a701709d445b03e881b4194d38, type: 2}
 --- !u!1 &871926482
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,8 +630,10 @@ MonoBehaviour:
   BoundSize: {x: 0, y: 0}
   BottomLeftCornerBound: {x: 0, y: 0}
   TopRightCornerBound: {x: 0, y: 0}
+  Scale: 10
   Prefab: {fileID: 6470156688268564088, guid: cc32eec53ea755446a6a9293b8422668, type: 3}
   TileParent: {fileID: 155766834}
+  SeaHeight: 0.3
 --- !u!4 &911464525
 Transform:
   m_ObjectHideFlags: 0
@@ -660,7 +665,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Types:
-  - {fileID: 11400000, guid: ce611225c2bf610409ac5f98743a3933, type: 2}
   - {fileID: 11400000, guid: 1b9903ac9b6e1444c98c6ebd0b4db1bd, type: 2}
   - {fileID: 11400000, guid: d868b2b034f402d488bccc577cec2731, type: 2}
 --- !u!114 &911464530
@@ -688,11 +692,10 @@ MonoBehaviour:
   TilesCoordinates: {fileID: 911464523}
   MapManager: {fileID: 911464524}
   TileType: {fileID: 911464529}
-  MaxHeight: 8
-  ShiftHeight: 0.2
   flatten: 0
   PostGenerationEffects:
   - {fileID: 507801461}
+  - {fileID: 1674351637}
 --- !u!1 &1302312706
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +905,53 @@ Transform:
   m_Father: {fileID: 871926486}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1674351635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1674351636}
+  - component: {fileID: 1674351637}
+  m_Layer: 6
+  m_Name: Create Frame Effect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1674351636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674351635}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 199255866}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1674351637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674351635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57befafaf3c8c134390dff88efc061be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TileCircleSpawner: {fileID: 911464523}
+  FrameTile: {fileID: 11400000, guid: 4daa9571e198c5545b9d11e750e12cec, type: 2}
+  frameHeight: 0.5
 --- !u!1 &1867955627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Zoom: {fileID: 1302312711}
-  RadiusMax: 20
+  RadiusMax: 30
   ChangeMax: 0.3
   MapCamera: {fileID: 1921120730}
   Map: {fileID: 155766834}

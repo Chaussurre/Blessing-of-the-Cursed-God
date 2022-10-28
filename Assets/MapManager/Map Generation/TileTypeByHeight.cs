@@ -9,7 +9,7 @@ namespace Map.Generation
     {
         public List<TileType> Types;
         
-        public TileType GetTileInfos(ref float height)
+        public TileType GetTileInfos(float height)
         {
             float distance = float.PositiveInfinity;
             TileType result = null;
@@ -23,9 +23,6 @@ namespace Map.Generation
                     result = type;
                 }
             }
-
-            if (result != null && result.forceHeight)
-                height = result.preferredHeight;
             
             return result;
         }

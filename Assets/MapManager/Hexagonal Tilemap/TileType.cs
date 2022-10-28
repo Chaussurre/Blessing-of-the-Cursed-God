@@ -10,10 +10,7 @@ namespace map.HexTilemap
     public class TileType : ScriptableObject
     {
         public float preferredHeight;
-        public bool forceHeight;
         
         public Color color;
-
-        public Material Material;
     }
 }

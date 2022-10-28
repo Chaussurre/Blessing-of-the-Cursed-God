@@ -51,20 +51,22 @@ Material:
     - _Deformation: 3
     - _Deformation_Scale: 1
     - _Floam_Size: 0.2
-    - _Foam_Density: 0.1
-    - _Foam_Radius: 0.4
-    - _Metallic: 1
+    - _Foam_Density: 0.4
+    - _Foam_Radius: 0.6
+    - _Metallic: 0.1
+    - _Normals_Density: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.3
+    - _Smoothness: 0.9
     - _Step: 0.5
-    - _Time_Speed: 0.7
-    - _Wave_Density: 10
-    - _Wave_Height: 0.3
-    - _Wave_Speed: 0.1
+    - _Time_Speed: 0.5
+    - _Transparence: 0.7
+    - _Wave_Density: 5
+    - _Wave_Height: 0.1
+    - _Wave_Speed: 0.05
     m_Colors:
     - _Clear_Sea_Color: {r: 0.77, g: 0.92, b: 0.94, a: 1}
     - _Dark_Sea_Color: {r: 0.36999997, g: 0.58, b: 0.61, a: 1}
     - _Emissions: {r: 0, g: 0, b: 0, a: 1}
-    - _Main_Color: {r: 0.41767526, g: 0.7452605, b: 0.8962264, a: 1}
+    - _Main_Color: {r: 0.5254902, g: 0.85568726, b: 0.9254902, a: 1}
   m_BuildTextureStacks: []

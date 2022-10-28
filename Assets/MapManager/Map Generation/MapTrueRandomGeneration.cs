@@ -11,7 +11,7 @@ using UnityEditor;
 
 namespace Map.Generation
 {
-    public class MapGenerationManager : MonoBehaviour
+    public class MapTrueRandomGeneration : MonoBehaviour
     {
         public TileCircleSpawner TileCoordinates;
         public TilemapManager MapManager;
@@ -43,7 +43,7 @@ namespace Map.Generation
             {
                 var height = Random.Range(0f, 1f);
 
-                var tileType = TileTypeManager.GetTileInfos(ref height);
+                var tileType = TileTypeManager.GetTileInfos(height);
                 
                 MapManager.SetTile(coordinates, tileType, height * MaxHeight);
             }
@@ -51,14 +51,14 @@ namespace Map.Generation
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(MapGenerationManager))]
+    [CustomEditor(typeof(MapTrueRandomGeneration))]
     class MapGenerationManagerEditor : Editor
     {
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
 
-            var mapGen = target as MapGenerationManager;
+            var mapGen = target as MapTrueRandomGeneration;
 
             if (Application.isPlaying && GUILayout.Button("Regenerate"))
             {

@@ -50,6 +50,23 @@ namespace map.HexTilemap
 
             Coordinates.Add(new Vector3Int(0, 0, 0));
         }
+
+
+        public List<Vector3Int> Exterior()
+        {
+            var exterior = new List<Vector3Int>();
+            for (int i = 0; i <= radius; i++)
+            {
+                exterior.Add(new Vector3Int(radius - i + 1, i, 0));
+                exterior.Add(new Vector3Int(-radius + i - 1, -i, 0));
+                exterior.Add(new Vector3Int(radius - i + 1, 0, i));
+                exterior.Add(new Vector3Int(-radius + i - 1, 0, -i));
+                exterior.Add(new Vector3Int(0, radius - i + 1, -i));
+                exterior.Add(new Vector3Int(0, -radius + i - 1, i));
+            }
+
+            return exterior;
+        }
     }
 
 #if UNITY_EDITOR
