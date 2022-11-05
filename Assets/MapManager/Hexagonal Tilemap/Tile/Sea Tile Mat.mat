@@ -57,10 +57,10 @@ Material:
     - _Normals_Density: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.9
+    - _Smoothness: 0.4
     - _Step: 0.5
     - _Time_Speed: 0.5
-    - _Transparence: 0.7
+    - _Transparence: 0.5
     - _Wave_Density: 5
     - _Wave_Height: 0.1
     - _Wave_Speed: 0.05
